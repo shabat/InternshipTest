@@ -1,5 +1,8 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import institution.University;
 import institution.interlink.Internship;
 import person.Student;
