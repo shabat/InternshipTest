@@ -1,18 +1,24 @@
 package institution.interlink;
 
+import institution.University;
 import person.Student;
 
 public class Internship {
+    private String internshipName;
+    private Knowledge averageKnowledge;  
+    private List<Student> studentsList;
+
     public Internship(String name) {
-        //TODO: Implementation is needed
+        //Constructor
+        this.internshipName = name;
+
     }
 
     public void setStudent(Student student) {
-        //TODO: Implementation is needed
+        if(student.getKnowledge() > university.getAverageKnowledge())
     }
 
     public String getStudents() {
-        //TODO: Implementation is needed
-        return "Andrew Maslenko\nJulia Veselkina\n";
+        return 
     }
 }

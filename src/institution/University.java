@@ -29,12 +29,12 @@ public class University {
     private void updateAverage(){
         int averageLevel = 0;
         for(Student j : studentsList){
-            averageLevel += j.getKnowledge();
+            averageLevel = j.getKnowledge() + averageLevel;
         }
         averageKnowlede.setLevel((int) averageLevel / listOfStudents.size());
     }
 
-    public Knowledge getAveraKnowledge() {
-        return this.averageKnowlede;
+    public int getAverageKnowledge() {
+        return this.averageKnowlede.getLevel();
     }
 }
