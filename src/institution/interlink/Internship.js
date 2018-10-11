@@ -15,9 +15,8 @@ class Internship {
     }
 
     getStudents() {
-        var eligebleStudents = '';
-        for (let j of this.internshipStudents){
-            eligebleStudents += j.getName();
+        for (let intern of this.internshipStudents){
+            console.log(`    ${intern.getName()} \t \t ${intern.getKnowledge()}`)
         }
     }
 }
