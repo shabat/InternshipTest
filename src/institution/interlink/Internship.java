@@ -27,7 +27,7 @@ public class Internship {
     public String getStudents(){
     	String students = "";
         for (Student student : this.internsList) {
-            students += student.getStudentName() + "\n";
+            students += "\t" + student.getStudentName() + "    " + student.getKnowledge() + "\n" ;
         }
         return students;
     }
