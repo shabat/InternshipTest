@@ -1,24 +1,35 @@
 package institution.interlink;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import institution.University;
 import person.Student;
+import person.consciousness.Knowledge;
 
 public class Internship {
     private String internshipName;
-    private Knowledge averageKnowledge;  
-    private List<Student> studentsList;
+    private int averageKnowledge;  
+    public List<Student> internsList;
 
-    public Internship(String name) {
-        //Constructor
+    public Internship(String name, int averageKnowledge) {
         this.internshipName = name;
-
+        this.averageKnowledge = averageKnowledge;
+        this.internsList = new ArrayList<Student>();
     }
 
     public void setStudent(Student student) {
-        if(student.getKnowledge() > university.getAverageKnowledge())
+		if(student.getKnowledge() > this.averageKnowledge){
+            internsList.add(student);
+        }
     }
 
-    public String getStudents() {
-        return 
+    public String getStudents(){
+    	String students = "";
+        for (Student student : this.internsList) {
+            students += student.getStudentName() + "\n";
+        }
+        return students;
     }
 }
+

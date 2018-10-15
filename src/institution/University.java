@@ -8,9 +8,10 @@ import person.consciousness.Knowledge;
 
 public class University {
     private String universityName;
-    private List<Student> studentsList;
-    private Knowledge averageKnowlede;
-
+    public List<Student> studentsList;
+    public int averageKnowledge;
+    
+    
     public University(String name) {
         //Constructor
         this.universityName = name;
@@ -26,15 +27,15 @@ public class University {
         updateAverage();
     }
 
-    private void updateAverage(){
-        int averageLevel = 0;
-        for(Student j : studentsList){
-            averageLevel = j.getKnowledge() + averageLevel;
+    public void updateAverage(){
+    	int averageLevel = 0;
+        for(int i=0; i<studentsList.size(); i++){
+            averageLevel += studentsList.get(i).getKnowledge();
         }
-        averageKnowlede.setLevel((int) averageLevel / listOfStudents.size());
-    }
+        averageKnowledge= averageLevel / studentsList.size();
+    }    
 
     public int getAverageKnowledge() {
-        return this.averageKnowlede.getLevel();
+        return averageKnowledge;
     }
 }
