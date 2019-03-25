@@ -1,15 +1,20 @@
 var University = require('../institution/University');
 var Internship = require('../institution/interlink/Internship');
 var Student = require('../person/Student');
+var fs = require('fs');
+var file = fs.readFileSync('../students.txt').toString().split('\r\n');
+var studentsArray = [];
+
+for (let line of file){
+    studentsArray.push(line.split(','));
+}
+
 
 var university = new University("CH.U.I.");
-    university.addStudent(new Student("Andrew Kostenko", 59));
-    university.addStudent(new Student("Julia Veselkina", 35));
-    university.addStudent(new Student("Maria Perechrest", 66));
-    university.addStudent(new Student("Peter Petrov", 29));
-    university.addStudent(new Student("Oleg Urbanovich", 96));
-    university.addStudent(new Student("Samuel Samsonov", 74));
-    university.addStudent(new Student("Johnatan Johnson", 87));
+for (let student of studentsArray){
+    university.addStudent(new Student(student[0], student[1]));
+}
+
 
 var internship = new Internship("Interlink", university.getAverage());
     for(let student of university.studentsList){
