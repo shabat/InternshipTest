@@ -1,6 +1,11 @@
 class Knowledge {
     constructor(level){
-        this.level = level;
+        if(typeof level === 'string'){
+            this.level = parseInt(level);
+        }
+        else{
+            this.level = level;
+        }
     }
 
     getLevel(){
