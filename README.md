@@ -1,4 +1,4 @@
-# InternshipTest
+# InterLink Internship Test
 Internship test for InterLink in **Java** and in **JavaScript**.
 
 ### Description
